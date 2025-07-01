@@ -76,7 +76,7 @@ class MinesweeperAgent:
         #     con -1 = non rivelata, >=0 = rivelata.)
         # =============================================================================
         # portiamo a CPU per ricavare la maschera
-        state_flat = state.flatten()
+        state_flat = state.flatten().cpu().numpy()
         solved_mask = (state_flat != -1)             # True = già rivelata
 
         # calcolo il valore minimo tra tutti i Q
